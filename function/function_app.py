@@ -48,13 +48,13 @@ def extract_cat_info(soup, keywords, max_age_months_total):
                         color = value
                     elif label == "Animal ID":
                         id = value
-            # logging.info(f"Name: {name}")
-            # logging.info(f"Breed: {breed}")
-            # logging.info(f"Age: {age}")
-            # logging.info(f"Sex: {sex}")
-            # logging.info(f"Color: {color}")
-            # logging.info(f"ID: {id}")
-            # logging.info(f"Link: {animal_link}")
+            logging.info(f"Name: {name}")
+            logging.info(f"Breed: {breed}")
+            logging.info(f"Age: {age}")
+            logging.info(f"Sex: {sex}")
+            logging.info(f"Color: {color}")
+            logging.info(f"ID: {id}")
+            logging.info(f"Link: {animal_link}")
 
             age_months = parse_age(age)
             if (
@@ -67,7 +67,7 @@ def extract_cat_info(soup, keywords, max_age_months_total):
             matching_keywords = [
                 keyword for keyword in keywords if keyword.lower() in color.lower()
             ]
-            if matching_keywords:
+            if matching_keywords and "female" in sex.lower():
                 send_notification(name, breed, age, sex, color, id, animal_link)
 
 
@@ -98,6 +98,9 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
         "tortoiseshell",
         "ragdoll",
         "point",
+        "black and white",
+        "white and black",
+        "orange",
     ]
 
     current_page = base_url

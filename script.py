@@ -77,6 +77,7 @@ def scrape_all_pages(driver):
 
 
 def send_notification(name, breed, age, sex, color, id, link):
+    # email username and password
     gmail_user = "***REMOVED***"
     gmail_password = "***REMOVED***"
 

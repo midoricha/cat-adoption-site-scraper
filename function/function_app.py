@@ -125,8 +125,9 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
 
 
 def send_notification(name, breed, age, sex, color, id, link):
-    gmail_user = "***REMOVED***"
-    gmail_password = "***REMOVED***"
+    # User email and password
+    gmail_user = "enter user email here"
+    gmail_password = "enter password here"
 
     from_email = gmail_user
     to_email = gmail_user
